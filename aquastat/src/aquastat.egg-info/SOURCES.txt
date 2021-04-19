@@ -1,0 +1,12 @@
+LICENSE
+MANIFEST.in
+README.md
+setup.cfg
+setup.py
+src/aquastat/__init__.py
+src/aquastat/aquastat.py
+src/aquastat.egg-info/PKG-INFO
+src/aquastat.egg-info/SOURCES.txt
+src/aquastat.egg-info/dependency_links.txt
+src/aquastat.egg-info/requires.txt
+src/aquastat.egg-info/top_level.txt
