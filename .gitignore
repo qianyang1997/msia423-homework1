@@ -5,3 +5,4 @@ aquastat/data/*
 aquastat/src/aquastat.egg-info/*
 develop-aquastat-functions.ipynb
 develop-time-slice-tests.ipynb
+.idea/*
