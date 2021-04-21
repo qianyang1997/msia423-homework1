@@ -1,6 +1,4 @@
-import logging.config
 import logging
-from pathlib import Path
 
 import pandas as pd
 import matplotlib.pyplot as plt
@@ -8,8 +6,8 @@ import seaborn as sns
 
 
 # Set logging configuration
-config_path = str(Path(__file__).parent.absolute()) + '\\..\\..\\logging.conf'
-logging.config.fileConfig(config_path)
+logging.basicConfig(format='%(asctime)s %(name)-12s %(levelname)-8s %(message)s',
+                    datefmt='%Y-%m-%d %I:%M:%S %p', level=logging.INFO)
 logger = logging.getLogger(__name__)
 
 
@@ -226,4 +224,13 @@ def plot_histogram(df,
 
 
 if __name__ == '__main__':
-    time_slice('1', '1234')
+    # check log error statement; comment out before running other lines
+    time_slice('not a df', 'something')
+    # input data
+    data = pd.read_csv('aquastat/data/aquastat.csv.gzip', compression='gzip')
+    # check log warning statement
+    variable_slice(data, 'not a variable')
+    # check plot_heatmap runs
+    agg_data = variable_slice(data, 'gdp')
+    fig, ax = plot_heatmap(agg_data.head(40))
+    plt.show()
